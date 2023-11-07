@@ -1,8 +1,5 @@
 import pygame
 import tela_jogo
-pygame.mixer.init()
-
-vaijogo = False
 
 def inicializa():
     #janela
@@ -29,7 +26,6 @@ def inicializa():
     return window,dicionario,dicionario_comida
 
 def recebe_eventos():
-    global vaijogo
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             return False
@@ -37,22 +33,22 @@ def recebe_eventos():
             if event.key == pygame.K_ESCAPE:
                 return False
             if event.key  == pygame.K_RETURN:
-                vaijogo = True
+                return True
         if event.type == pygame.KEYDOWN:        
             if event.key == pygame.K_y:
-                vaijogo = True
+                return True
                 
-    return True
+    return None
 
 def desenha(window,dicionario):
     window.fill((0,149,0))
-#desenha a logo
+    #desenha a logo
     window.blit(dicionario['cobra'],(420,220))
 
-#desenha bem vindo
+    #desenha bem vindo
     window.blit(dicionario['bem vindo'],(360,100))
 
-#desenha as instruções
+    #desenha as instruções
     texto = dicionario['fonte'].render('COMO JOGAR:',False,(0,0,0))
     window.blit(texto,(100,490))
 
@@ -76,20 +72,15 @@ def desenha(window,dicionario):
     pygame.display.update()
 
 def game_loop_inicial(window,dicionario,estado):
-    while recebe_eventos():
-        if vaijogo:
+    while True:
+        event_result = recebe_eventos()
+        if event_result is None:
+            desenha(window,dicionario)
+        elif event_result:
             window,dicionario,estado = tela_jogo.inicializa()
             fecha_jogo = tela_jogo.game_loop(window,dicionario,estado)
             if fecha_jogo == False:
                 return False
-        else:
-            desenha(window,dicionario)
     
 w,d,estado= inicializa()
 game_loop_inicial(w,d,estado)
-
-
-
-
-
-    

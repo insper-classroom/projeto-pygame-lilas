@@ -121,7 +121,6 @@ def inicializa():
 
 def recebe_eventos(estado,dicionario,window):
     estado, dicionario = jogo.muda_movimento(estado, dicionario)
-
     y = estado['cobra'][0]['pos'][1] 
     x = estado['cobra'][0]['pos'][0] 
     
