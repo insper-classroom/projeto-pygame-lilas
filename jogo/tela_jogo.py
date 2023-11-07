@@ -76,7 +76,7 @@ def inicializa():
     #imagem da parede
     dicionario['parede'] = pygame.image.load('imagens/parede2.png')
 
-    estado['portal']['img'] = pygame.transform.scale(pygame.image.load("imagens/pedra.png"), (TILE_FRAME, TILE_FRAME))
+    estado['portal']['img'] = pygame.transform.scale(pygame.image.load("imagens/portal.png"), (TILE_FRAME, TILE_FRAME))
     estado["portal"]["pos"] = pygame.Rect((randint(100, 1100), randint(100, 700)), (TILE_FRAME, TILE_FRAME))
 
     

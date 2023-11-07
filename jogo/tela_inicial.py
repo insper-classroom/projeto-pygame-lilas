@@ -52,7 +52,7 @@ def desenha(window,dicionario):
     texto = dicionario['fonte'].render('COMO JOGAR:',False,(0,0,0))
     window.blit(texto,(100,490))
 
-    texto = dicionario['fonte'].render('- você pode mover usando as teclas de setas ',False,(0,0,0))
+    texto = dicionario['fonte'].render('- você pode mover usando as teclas da setas ',False,(0,0,0))
     window.blit(texto,(100,525))
 
     texto = dicionario['fonte'].render('- para você aumentar o corpo é necessário comer a maça vermelha ',False,(0,0,0))
@@ -61,7 +61,7 @@ def desenha(window,dicionario):
     texto = dicionario['fonte'].render('- o objetivo do jogo é que você chegue na tela do chefão',False,(0,0,0))
     window.blit(texto,(100,575))
 
-    texto = dicionario['fonte'].render('- para ir na tela do chefao precisa 20xp que ganha comendo a maça laranja',False,(0,0,0))
+    texto = dicionario['fonte'].render('- na tela do chefao precisa 20xp ganha comendo maça laranja e abrirá o portal',False,(0,0,0))
     window.blit(texto,(100,600))
 
     texto = dicionario['fonte'].render('- cuidado!! ao enfrentar o chefao você precisa ter 20xp para remover ele',False,(0,0,0))
