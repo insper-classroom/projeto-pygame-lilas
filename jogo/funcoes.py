@@ -41,26 +41,6 @@ def muda_movimento(estado, dicionario):
                     dicionario['img_cabeca'] = dicionario['cobra_baixo']
                     estado['direcao'] = 'baixo'
             
-            elif event.key == pygame.K_w:
-                if estado['direcao'] != 'baixo':
-                    dicionario['img_cabeca'] = dicionario['cobra_cima']
-                    estado['direcao'] = 'cima'
-
-            if event.key == pygame.K_d:
-                if estado['direcao'] != 'esquerda': 
-                    dicionario['img_cabeca'] = dicionario['cobra_direita']
-                    estado['direcao'] = 'direita'
-
-            elif event.key == pygame.K_a:
-                if estado['direcao'] != 'direita':
-                    dicionario['img_cabeca'] = dicionario['cobra_esquerda']
-                    estado['direcao'] = 'esquerda'
-                
-            elif event.key == pygame.K_s:
-                if estado['direcao'] != 'cima':
-                    dicionario['img_cabeca'] = dicionario['cobra_baixo']
-                    estado['direcao'] = 'baixo'
-            
             elif event.key == pygame.K_UP:
                 if estado['direcao'] != 'baixo':
                     dicionario['img_cabeca'] = dicionario['cobra_cima']

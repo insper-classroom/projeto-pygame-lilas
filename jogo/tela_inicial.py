@@ -11,7 +11,7 @@ def inicializa():
     pygame.display.set_caption('RETRO SNAKE')
 
     dicionario = {}
-    #INSTRUCOES FONTE
+    #fonte
     dicionario['fonte'] = pygame.font.Font('fonte/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf',25)
 
     #desenho da cobra
@@ -42,22 +42,21 @@ def recebe_eventos():
             if event.key == pygame.K_y:
                 vaijogo = True
                 
-
     return True
 
 def desenha(window,dicionario):
     window.fill((0,149,0))
-#DESENHAR A COBRA
+#desenha a logo
     window.blit(dicionario['cobra'],(420,220))
 
 #desenha bem vindo
     window.blit(dicionario['bem vindo'],(360,100))
 
-#DESENHAR AS INSTRUÇOES
+#desenha as instruções
     texto = dicionario['fonte'].render('COMO JOGAR:',False,(0,0,0))
     window.blit(texto,(100,490))
 
-    texto = dicionario['fonte'].render('- você pode mover com as teclas W,S,A,D ou usar as setas ',False,(0,0,0))
+    texto = dicionario['fonte'].render('- você pode mover usando as teclas de setas ',False,(0,0,0))
     window.blit(texto,(100,525))
 
     texto = dicionario['fonte'].render('- para você aumentar o corpo é necessário comer a maça vermelha ',False,(0,0,0))
@@ -80,7 +79,7 @@ def game_loop_inicial(window,dicionario,estado):
     while recebe_eventos():
         if vaijogo:
             window,dicionario,estado = tela_jogo.inicializa()
-            fecha_jogo = tela_jogo.game_loop(window,dicionario,estado)#IMPORTANTE PARA TROCAR DE TELAS
+            fecha_jogo = tela_jogo.game_loop(window,dicionario,estado)
             if fecha_jogo == False:
                 return False
         else:
