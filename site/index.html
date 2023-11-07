@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Retro Snake</title>
+    <link rel="shortcut icon" href="imagens/cobra_logo.ico"/>
+</head>
+<body>
+    <nav class="h-menu">
+        <ul class="flex justify-around items-center">
+            <div>
+                <img src="./imagens/logo.png" class="logo"/>
+            </div>
+            <li><a>SOBRE</a></li>
+            <li><a>DOWNLOAD</a></li>
+            <li><a>DESENVOLVIMENTO</a></li>
+            <li><a>HEURÍSTICAS</a></li>
+        </ul>
+    </nav>
+    
+    <div id="Sobre" class="sessao grid-cols-2" id="sobre">
+        <div class="image1">
+
+            <i class="fa-solid fa-arrow-right seta-direita" onclick="muda_slide(1)"></i>
+            <i class="fa-solid fa-arrow-left seta-esquerda" onclick="muda_slide(2)"></i>
+            <img selected="true" style="display: block;" class='quadro' src='./imagens/imagem1.png' />
+            <img selected="false" style="display: none;" class='quadro' src='./imagens/imagem2.png' />
+            <img selected="false" style="display: none;" class='quadro' src='./imagens/imagem3.png' />
+            <img selected="false" style="display: none;" class='quadro' src='./imagens/imagem4.png' />
+
+            <!-- <ul class="slider">
+                <li>
+                    <input type="radio" id="slide1" name="slide" checked>
+                    <label for="slide1"></label>
+                    <img class="quadro" src="./imagens/imagem1.png"/>
+                </li>
+                <li>
+                    <input type="radio" id="slide2" name="slide">
+                    <label for="slide2"></label>
+                    <img class="quadro" src="./imagens/imagem2.png"/>
+                </li>
+                <li>
+                    <input type="radio" id="slide3" name="slide">
+                    <label for="slide3"></label>
+                    <img class="quadro" src="./imagens/imagem3.png"/>
+                </li>
+                <li>
+                    <input type="radio" id="slide4" name="slide">
+                    <label for="slide4"></label>
+                    <img class="quadro" src="./imagens/imagem4.png"/>
+                </li>
+                <li>
+                    <input type="radio" id="slide4" name="slide">
+                    <label for="slide4"></label>
+                    <img class="quadro" src="./imagens/imagem4.png"/>
+                </li>
+            </ul> -->
+        </div>
+        <div class="text-green">
+            <p class="ocr">Retro snake é um jogo desenvolvido pelos alunos Ana Beatriz e Artur Rizzi que tem a intenção de retomar uma nostalgia do famoso jogo da cobrinha que tinha no celular da Nokia nos anos 2000. Nós aceitamos o desafio de desenvolver esse jogo porém, com novas funções agora a cobra pode enfrentar um chefão! 
+            </p>
+        </div>
+    </div>
+
+    <div id="Download" class="sessao grid-cols-2" id="download">
+        <div class="flex items-center justify-center">
+            <img class="maca" src="./imagens/maca.png"/>
+            <img class="cobra_comendo" src="./imagens/cobra_comendo.png"/>
+        </div>
+        <div>
+            <p class="ocr"> Para instalar o nosso jogo siga os seguintes passos: </p>
+            <ul>
+                <li><img src="./imagens/maca.png" class="maca-point" /> Caso não tenha o <a class="text-green" href="https://code.visualstudio.com/download">VSCode</a> instalado, baixe ele e garanta que o <a class="text-green" href="https://www.python.org/downloads/">Python 3.10</a> esteja instalado também;</li>
+                <li><img src="./imagens/maca.png" class="maca-point" /> Dentro do VSCode, certifique-se de que você possui a biblioteca Pygame instalada, caso não tenha, digite o seguinte comando no terminal: pip install pygame;</li>
+                <li><img src="./imagens/maca.png" class="maca-point" /> Após isso, extraia o arquivo .zip instalado e abra ele pelo VSCode. Clique no arquivo play.py e aperte F5 para rodar o jogo;</li>
+                <li><img src="./imagens/maca.png" class="maca-point" /> Caso deseje apenas clonar o repositório, <a class="text-green" href="https://github.com/insper-classroom/projeto-pygame-preto">clique aqui</a></li>
+                <li><img src="./imagens/maca.png" class="maca-point" /> Abra o terminal e digite python play.py</li>
+            </ul>
+        </div>
+    </div>
+
+</body> 
+<script>
+    function muda_slide(aumentar) {
+    var lista_quadro = document.querySelectorAll('.quadro');
+
+    for (var i = 0; i < lista_quadro.length; i++) {
+        var img = lista_quadro[i];
+
+        if (img.getAttribute("selected") === 'true') {
+        img.setAttribute("selected", "false");
+        img.style.display = "none";
+
+        var novoIndice;
+
+        if (aumentar === 1) {
+            novoIndice = (i + 1) % lista_quadro.length;
+        } else {
+            novoIndice = (i - 1 + lista_quadro.length) % lista_quadro.length;
+        }
+
+        var elemento = lista_quadro[novoIndice];
+        elemento.setAttribute("selected", "true");
+        elemento.style.display = "block";
+
+        break;
+        }
+    }
+}
+</script>
+<script src="https://kit.fontawesome.com/a9d816e57f.js" crossorigin="anonymous"></script>
+</html>
