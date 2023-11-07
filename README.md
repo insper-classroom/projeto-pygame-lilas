@@ -15,7 +15,7 @@ Para jogar, é necessário ter o Python 3.10 instalado na máquina. Além disso,
 
 Após instalar a biblioteca, clone este repositório e execute o arquivo `jogo.py`, dentro da pasta `codigo`. O jogo será aberto em uma janela de terminal e pode ser jogado com as seguintes teclas:
 
-- **Movimento**: teclas de seta ou teclas W,S,D,A
+- **Movimento**: teclas de seta 
 - **Fechar jogo**: tecla "esc"
 
 ### Jogando no Windows

@@ -52,7 +52,7 @@ def desenha(window,dicionario):
     texto = dicionario['fonte'].render('COMO JOGAR:',False,(0,0,0))
     window.blit(texto,(100,490))
 
-    texto = dicionario['fonte'].render('- você pode mover usando as teclas da setas ',False,(0,0,0))
+    texto = dicionario['fonte'].render('- você pode mover usando as teclas de setas ',False,(0,0,0))
     window.blit(texto,(100,525))
 
     texto = dicionario['fonte'].render('- para você aumentar o corpo é necessário comer a maça vermelha ',False,(0,0,0))
