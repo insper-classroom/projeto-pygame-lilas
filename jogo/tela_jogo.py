@@ -28,7 +28,10 @@ def inicializa():
             'imag' : '',
         }],
         'clock' : clock,
-        'status': True
+        'status': True,
+        "portal": {
+            "status": False
+        }
     }
 
     #posicao aleatoria da maçã
@@ -72,6 +75,9 @@ def inicializa():
 
     #imagem da parede
     dicionario['parede'] = pygame.image.load('imagens/parede2.png')
+
+    estado['portal']['img'] = pygame.transform.scale(pygame.image.load("imagens/pedra.png"), (TILE_FRAME, TILE_FRAME))
+    estado["portal"]["pos"] = pygame.Rect((randint(100, 1100), randint(100, 700)), (TILE_FRAME, TILE_FRAME))
 
     
     #imagens da cobra
@@ -144,6 +150,8 @@ def recebe_eventos(estado,dicionario,window):
 
     #colisao da cobra com a maçã especial
     estado, dicionario = jogo.colisao_maca_especial(estado, dicionario, retan_cobra)
+
+    estado, dicionario = jogo.colisao_portal(estado, dicionario, retan_cobra)
     
     return estado['status']
 
@@ -166,6 +174,10 @@ def desenha(window,dicionario,estado):
 
     texto = dicionario['fonte'].render(f'XP: {estado["xp"]}',False,(0,0,0))
     window.blit(texto,(10,30))
+
+    if estado["xp"] >= 20:
+        window.blit(estado['portal']['img'], estado['portal']['pos'])
+
     pygame.display.update()
 
 def game_loop(window,dicionario,estado):
@@ -173,9 +185,11 @@ def game_loop(window,dicionario,estado):
     while recebe_eventos(estado,dicionario,window):
         estado['clock'].tick(4)
         desenha(window,dicionario,estado)
-        if estado['xp'] >= 20:
-            window,dicionario,estado = tela_chefão.inicializa()
-            tela_chefão.game_loop(window,dicionario,estado)
+        if estado['portal']['status']:
+            w,d,e = tela_chefão.inicializa()
+            e["cobra"] = estado["cobra"]
+            e['direcao'] = estado['direcao']
+            tela_chefão.game_loop(w,d,e)
             
             w,d,e = inicializa()
             game_loop(w,d,e)

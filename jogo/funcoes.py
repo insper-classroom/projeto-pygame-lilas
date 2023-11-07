@@ -116,6 +116,18 @@ def atualiza_cobra(estado, dicionario, x, y):
                 pescoco['imag']= dicionario['cobra_quina_direita_baixo']
             if cabeca['pos'][0] > pescoco['pos'][0] and pescoco['pos'][1] > corpo1['pos'][1]: 
                 pescoco['imag']= dicionario['cobra_quina_direita_cima']
+
+        penultimo = estado['cobra'][-2]
+        if penultimo['pos'][1] == rabo['pos'][1]:
+            if penultimo['pos'][0] < rabo['pos'][0]:
+                rabo['imag'] = dicionario['cobra_rabo_esquerda']
+            if penultimo['pos'][0] > rabo['pos'][0]:
+                rabo['imag'] = dicionario['cobra_rabo_direita']
+        if penultimo['pos'][0] == rabo['pos'][0]:
+            if penultimo['pos'][1] < rabo['pos'][1]:
+                rabo['imag'] = dicionario['cobra_rabo_cima']
+            if penultimo['pos'][1] > rabo['pos'][1]:
+                rabo['imag'] = dicionario['cobra_rabo_baixo']
     return estado, dicionario
 
 def colisao_parede(estado, dicionario, retan_cobra):
@@ -123,6 +135,11 @@ def colisao_parede(estado, dicionario, retan_cobra):
         if retan_cobra.colliderect(parede):
             estado, dicionario = game_over(estado, dicionario)
             dicionario['morte'] = "ter batido na parede"
+    return estado, dicionario
+
+def colisao_portal(estado, dicionario, retan_cobra):
+    if retan_cobra.colliderect(estado['portal']["pos"]) and estado['xp'] >= 20:
+        estado["portal"]['status'] = True
     return estado, dicionario
 
 def colisao_cobra(estado, dicionario, retan_cobra):
@@ -150,7 +167,10 @@ def colisao_maca(estado, dicionario, retan_cobra):
 
         estado['cobra'].insert(0,nova_cabeca)
 
-        estado['cobra'][1]['imag'] = dicionario['cobra_corpo']
+        pescoco = estado['cobra'][1]
+        pescoco['imag'] = dicionario['cobra_corpo']
+        if nova_cabeca['pos'][1] == pescoco['pos'][1]:
+            pescoco['imag'] = dicionario['cobra_corpo_horizontal']
 
         dicionario['comida'].play()
         estado["pontuacao"] += 1
