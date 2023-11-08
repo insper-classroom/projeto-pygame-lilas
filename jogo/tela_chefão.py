@@ -130,7 +130,7 @@ def inicializa():
     #sons
     musica = 'sons/8bit-music-for-game-68698.mp3'
     pygame.mixer.music.load(musica)
-    pygame.mixer.music.play()
+    pygame.mixer.music.play(-1)
 
     dicionario['game_over'] = pygame.mixer.Sound('sons/game-over-arcade-6435.mp3')
 
