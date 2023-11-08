@@ -193,8 +193,26 @@ img.logo {
     visibility: visible;
     z-index: 10;
 }
+
+.commits{
+    font-size: 30px;
+}
+
+.heuristica {
+    width: 50vh;
+}
+
+.heuristicas {
+    justify-items: center;
+    margin: 20px;
+}
+
 .flex {
     display: flex;
+}
+
+.column {
+    flex-direction: column;
 }
 
 .items-center {
@@ -209,3 +227,7 @@ img.logo {
     justify-content: space-around;
 }
 
+.grid-rows-2 {
+    display: grid;
+    grid-template-rows: 50% 50%;
+}

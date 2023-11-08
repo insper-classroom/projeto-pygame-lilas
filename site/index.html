@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="./style.css"/>
     <title>Retro Snake</title>
-    <link rel="shortcut icon" href="imagens/cobra_logo.ico"/>
+<link rel="shortcut icon" href="imagens/cobra_logo.ico"/>
 </head>
 <body>
     <nav class="h-menu">
@@ -27,6 +27,7 @@
             <img selected="false" style="display: none;" class='quadro' src='./imagens/imagem2.png' />
             <img selected="false" style="display: none;" class='quadro' src='./imagens/imagem3.png' />
             <img selected="false" style="display: none;" class='quadro' src='./imagens/imagem4.png' />
+            <video style="display: none;" class='quadro' controls autoplay src='./imagens/video_jogo.webm' />
         </div>
         <div class="text-green">
             <p class="ocr">Retro Snake é um jogo desenvolvido pela aluna Ana Beatriz que tem a intenção de retomar uma nostalgia do famoso jogo da cobrinha que tinha no celular da Nokia nos anos 2000. Eu aceitei o desafio de desenvolver esse jogo porém, com novas funções agora a cobra pode enfrentar um chefão! 
@@ -48,9 +49,30 @@
                 <li><img src="./imagens/maca.png" class="maca-point" /> Caso deseje apenas clonar o repositório, <a class="text-green" href="">clique aqui</a></li>
                 <li><img src="./imagens/maca.png" class="maca-point" /> Abra o terminal e digite python play.py</li>
             </ul>
-        </div>
     </div>
+</div>
+        <div id="commits" class="text-green flex items-center justify column commits">
+        </div>
 
+
+        <div id='heuristica' class="sessao grid-rows-2">
+            <div class="">
+                <h1 class="flex items-center justify-center text-green">Antes</h1>
+                <div class="grid-cols-2 heuristicas">
+                    <img class="heuristica" src="./imagens/heuristica2.png">
+                    <img class="heuristica" src="./imagens/heuristica4.png">
+                </div>
+            </div>
+            <div class="">
+                <h1 class="flex items-center justify-center text-green">Depois</h1>
+                <div class="grid-cols-2 heuristicas">
+                    <img class="heuristica" src="./imagens/imagem1.png">
+                <img class="heuristica" src="./imagens/imagem2.png">
+            </div>
+        </div>
+        </div>
+
+        <script src="./script.js"></script>
 </body> 
 <script>
     function muda_slide(aumentar) {

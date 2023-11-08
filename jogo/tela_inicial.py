@@ -58,7 +58,7 @@ def desenha(window,dicionario):
     texto = dicionario['fonte'].render('- para você aumentar o corpo é necessário comer a maça vermelha ',False,(0,0,0))
     window.blit(texto,(100,550))
 
-    texto = dicionario['fonte'].render('- o objetivo do jogo é que você chegue na tela do chefão',False,(0,0,0))
+    texto = dicionario['fonte'].render('- o objetivo do jogo é que você chegue na tela do chefao',False,(0,0,0))
     window.blit(texto,(100,575))
 
     texto = dicionario['fonte'].render('- na tela do chefao precisa 20xp ganha comendo maça laranja e abrirá o portal',False,(0,0,0))
