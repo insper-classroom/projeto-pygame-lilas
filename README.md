@@ -3,7 +3,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12037553&assignment_repo_type=AssignmentRepo)
 # RETRO SNAKE
 
-Este é um projeto de um jogo desenvolvido por Ana Beatriz da Cunha na disciplina Developer Life do semestre do curso de Ciência da Computação do Insper. O jogo foi desenvolvido em Python, utilizando o módulo [curses](https://docs.python.org/3/library/curses.html) para a interface gráfica e as sprites foi desenvolvido pela aluna Ana Beatriz da Cunha no site [piskel](https://www.piskelapp.com).
+Este é um projeto de um jogo desenvolvido por Ana Beatriz da Cunha na disciplina Developer Life do primeiro semestre do curso de Ciência da Computação do Insper. O jogo foi desenvolvido em Python, utilizando o módulo [curses](https://docs.python.org/3/library/curses.html) para a interface gráfica e as sprites foi desenvolvido pela aluna Ana Beatriz da Cunha no site [piskel](https://www.piskelapp.com).
 
 ## Descrição do jogo
 
